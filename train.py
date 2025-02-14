@@ -39,7 +39,7 @@ def Train_model(model, data, adj, label):
         loss_hmse = F.mse_loss(z_mat, construct_high_confidence_same_cluster_matrix(c))
         
         loss_community = info_nce_loss(c1.T, c2.T) 
-        loss_node = info_nce_loss_with_cluster_wight(z1, z2, c1, c2)
+        loss_node = info_nce_loss_with_cluster_weight(z1, z2, c1, c2)
         model_loss = loss_community +loss_node + opt.args.beta * loss_hmse
 
         print('loss_hmse:{}'.format(loss_hmse),'loss_community:{}'.format(loss_community)
