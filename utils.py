@@ -188,7 +188,7 @@ def cluster_sim_weight(c1, c2, beta=1):
     
     return sim_weight
 
-def info_nce_loss_with_cluster_wight(v1, v2, c1, c2, temperature=0.2):
+def info_nce_loss_with_cluster_weight(v1, v2, c1, c2, temperature=0.2):
     batch_size = v1.shape[0]
     c = (c1 + c2) / 2
     # print(c1)
